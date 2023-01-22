@@ -1,0 +1,16 @@
+.tourists-category-title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.tourists-category-title h6 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #439a97;
+}
+
+.tourists {
+  color: #459a97;
+}

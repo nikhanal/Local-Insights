@@ -4,11 +4,14 @@ import Hero from "./Hero";
 import Crousel from "./Crousel";
 
 function Home() {
-  return <>
-  <Hero />
-  <Crousel title="Trending Local Sites"/>
-  <Crousel title="Exquisite Local Foods"/>
-  </>;
+  return (
+    <>
+      <Hero />
+
+      <Crousel title="Trending Local Sites" />
+      <Crousel title="Exquisite Local Foods" />
+    </>
+  );
 }
 
 export default Home;

@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
 import "./portal.css";
+import Tourists from "./Tourists";
 
 function Portal() {
   return (
@@ -33,9 +34,16 @@ function Portal() {
             </select>
           </div>
         </div>
+        <div className="portal-content-main">
+          <div className="portal-content-main-title">
+            <h1>Available Trips</h1>
+          </div>
+          <div className="portal-content-main-trips">
+            <Tourists />
+          </div>
+        </div>
       </section>
     </>
   );
 }
-
 export default Portal;

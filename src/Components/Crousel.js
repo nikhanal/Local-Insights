@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import "./crousel.css";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
-function Crousel({title}) {
+function Crousel({ title }) {
   return (
     <>
       <div className="crousel">

@@ -5,12 +5,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import IconButton from "@mui/material/IconButton";
 import "./form.css";
 function SignUp(props) {
-  const { openSignup, closeSignup } = props;
+  const { openSignup, closeSignup,title } = props;
   const handleClose = () => {
     closeSignup();
     setIsSubmitting(false);
     setFormErrors({});
-    //setFormValues(initialValues);
+
   };
   const initialValues = {
     firstName: "",
@@ -28,24 +28,24 @@ function SignUp(props) {
   const [formErrors, setFormErrors] = React.useState({});
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const submitForm = () => {
-    fetch("http://localhost:3001/auth/create", {
+    fetch("http://localhost:3005/auth/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        email: "formValues.email",
-        hash: "formValues.password",
+        email: formValues.email,
+        hash: formValues.password,
         userInfo: {
-          firstName: "formValues.firstName",
-          lastName: "formValues.lastName",
-          contactNumber: "formValues.contactNumber",
-          gender: "formValues.gender",
-          dateOfBirth: "formValues.dateOfBirth",
-          isGuide: "formValues.isGuide",
+          firstName: formValues.firstName,
+          lastName: formValues.lastName,
+          contactNumber: formValues.contactNumber,
+          gender: formValues.gender,
+          dateOfBirth: formValues.dateOfBirth,
+          isGuide: formValues.isGuide,
         },
         guideInfo: {
-          location: "formValues.location",
+          location: formValues.location,
         },
       }),
     });
@@ -128,7 +128,7 @@ function SignUp(props) {
         </IconButton>
       </div>
       <div className="title">
-        <h1>Register</h1>
+        <h1>{title}</h1>
       </div>
       <form onSubmit={handleSubmit} noValidate>
         <div className="entry name">

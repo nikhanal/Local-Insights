@@ -4,16 +4,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Components/Home";
 import Hero from "./Components/Hero";
 import Crousel from "./Components/Crousel";
-import Navbar from "./Components/Navbar";
+import Portal from "./Components/Portal";
 
 export default function App() {
   return (
     <>
-      <Router>
-        <Navbar />
-        <Hero />
-        <Crousel />
-        <Crousel />
+      <Router>        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/portal" element={<Portal />} />
+        </Routes>
       </Router>
     </>
   );

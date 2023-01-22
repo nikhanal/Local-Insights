@@ -2,12 +2,12 @@ import React from "react";
 import Card from "./Card";
 import "./crousel.css";
 import WhatshotIcon from "@mui/icons-material/Whatshot";
-function Crousel() {
+function Crousel({title}) {
   return (
     <>
       <div className="crousel">
         <div className="crousel-title">
-          <h2>Trending Places</h2>
+          <h2>{title}</h2>
           <WhatshotIcon
             sx={{
               color: "#fbe09a",

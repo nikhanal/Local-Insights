@@ -7,7 +7,7 @@ import "./form.css";
 import SignUp from "./SignUp";
 export default function SignIn(props) {
   const { onClose, open } = props;
-
+  
   const handleClose = () => {
     onClose();
     setIsSubmitting(false);
@@ -30,17 +30,16 @@ export default function SignIn(props) {
   const [formErrors, setFormErrors] = React.useState({});
   const [isSubmitting, setIsSubmitting] = React.useState(false);
   const submitForm = () => {
-    fetch("http://localhost:3000/auth/login", {
+    fetch("http://localhost:3005/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formValues),
-    }).then((res) => {
-      if (res.status === 200) {
-        console.log("Login successful");
-      }
+    }).then((res) => res.json()).then(data=>{
+      localStorage.setItem("token",data.token);
     });
+    handleClose();
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -156,7 +155,7 @@ export default function SignIn(props) {
           </div>
         </form>
       </Dialog>
-      <SignUp openSignup={openSignup} closeSignup={closeSignup} />
+      <SignUp openSignup={openSignup} closeSignup={closeSignup} title="Register"/>
     </>
   );
 }

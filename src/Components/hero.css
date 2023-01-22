@@ -10,6 +10,17 @@
   justify-content: space-between;
 }
 
+.hero-top-right-account{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: #439a97;
+  font-weight: 700;
+  cursor: pointer;
+}
+
 .hero-mid {
   display: flex;
   flex-direction: column;
